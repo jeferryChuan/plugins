@@ -53,3 +53,7 @@
 .dialog-button span:last-child {
     margin-right: 0;
 }
+
+.border-bottom {
+    border-bottom: 1px solid #f5f5f5;
+}
