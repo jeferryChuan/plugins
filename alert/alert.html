@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+    <link type="text/css" rel="stylesheet" href="../common/common.css"/>
+    <link type="text/css" rel="stylesheet" href="./alert.css" />
+</head>
+<body>
+<script src="../lib/zepto.js"></script>
+<script src="./alert.js"></script>
+<script>
+    window.qPlugins.showAlert({
+        tip: '测试一下'
+    });
+
+    setTimeout(function () {
+        window.qPlugins.showAlert({
+            type: 'warning',
+            tip: '测试一下'
+        });
+    }, 4000);
+
+    setTimeout(function () {
+        window.qPlugins.showAlert({
+            type: 'danger',
+            tip: '测试一下',
+            duration: 5000
+        });
+    }, 10000);
+</script>
+</body>
+</html>
