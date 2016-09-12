@@ -1,4 +1,4 @@
-function setCookie (data, opt) {
+function cookie (data, opt) {
     function defaults (obj, defs) {
         obj = obj || {};
         for (var key in defs) {
