@@ -44,3 +44,38 @@ function getSize (size) {
         return '---';
     }
 }
+
+function ajaxSubmitForm (form, callback) {
+    var formData = new FormData();
+    var data = form.serializeArray();
+
+    for (var i = 0, li = data.length; i < li; i++) {
+        formData.append(data[i].name, data[i].value);
+    }
+
+    $.ajax({
+        type: form[0].method,
+        url: form[0].action,
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            if (data && typeof data == 'string') {
+                try {
+                    data = JSON.parse(data);
+                } catch (e) {
+                    
+                }
+            }
+
+            callback && callback(data);
+        },
+        error: function (err) {
+            if (err.status && err.status == 403) {
+                forbiddenErrorTip();
+            }
+            callback && callback();
+        }
+    });
+}
