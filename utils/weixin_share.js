@@ -77,7 +77,7 @@
 
         window.wx.onMenuShareTimeline({
             title: dataForWeiXin.title,
-            desc: dataForWeiXin.desc,
+            desc: dataForWeiXin.title,
             link: dataForWeiXin.url,
             imgUrl: dataForWeiXin.img,
             success: function () {
