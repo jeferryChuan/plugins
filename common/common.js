@@ -27,3 +27,20 @@ function getQueryString(params) {
     }
     return queryString;
 }
+
+function getSize (size) {
+    var UNITS = ['B', 'K', 'M', 'G'];
+    var finalSize = size, unit = UNITS[0], index = 0;
+
+    while (finalSize / 1024 >= 1 && UNITS[index]) {
+        finalSize = finalSize / 1024;
+        index ++;
+        unit = UNITS[index];
+    }
+
+    if (finalSize) {
+        return Number(finalSize).toFixed(2) + unit;
+    } else {
+        return '---';
+    }
+}
